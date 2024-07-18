@@ -13,6 +13,7 @@ class MessageFieldBox extends StatelessWidget {
         borderRadius: BorderRadius.circular(20));
 
     final inputDecoration = InputDecoration(
+        hintText: 'Type your message',
         enabledBorder: outlineInputBorder,
         focusedBorder: outlineInputBorder,
         filled: true,
@@ -27,6 +28,9 @@ class MessageFieldBox extends StatelessWidget {
         ));
 
     return TextFormField(
+      onTapOutside: (event) {
+        focusNode.unfocus();
+      },
       focusNode: focusNode,
       decoration: inputDecoration,
       controller: textController,

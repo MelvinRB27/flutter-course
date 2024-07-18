@@ -17,7 +17,7 @@ class ChatScreen extends StatelessWidget {
                 "https://m.media-amazon.com/images/M/MV5BMTRhNzQ3NGMtZmQ1Mi00ZTViLTk3OTgtOTk0YzE2YTgwMmFjXkEyXkFqcGdeQXVyNzg5MzIyOA@@._V1_FMjpg_UX1000_.jpg"),
           ),
         ),
-        title: const Text('Anne Hathaway'),
+        title: const Text('Anne Hathaway ❤️'),
         centerTitle: false,
       ),
       body: const _ChatView(),
