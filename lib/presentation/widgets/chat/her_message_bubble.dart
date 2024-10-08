@@ -18,7 +18,7 @@ class HerMessageBubble extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-              color: colors.secondary, borderRadius: BorderRadius.circular(20)),
+              color: colors.error, borderRadius: BorderRadius.circular(20)),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child:
@@ -26,7 +26,7 @@ class HerMessageBubble extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 5),
-        _ImageBubble(),
+        _ImageBubble(message: message,),
         const SizedBox(height: 10),
       ],
     );
@@ -34,6 +34,14 @@ class HerMessageBubble extends StatelessWidget {
 }
 
 class _ImageBubble extends StatelessWidget {
+
+  final Message message;
+
+  const _ImageBubble({
+    required this.message,
+  });
+
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -41,7 +49,8 @@ class _ImageBubble extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
       child: Image.network(
-        "https://yesno.wtf/assets/no/28-e19b6f658f621f7c5980a33f8249a65d.gif",
+        message.imgUrl! ,
+        // "https://yesno.wtf/assets/no/28-e19b6f658f621f7c5980a33f8249a65d.gif",
         width: size.width * 0.7,
         height: 150,
         fit: BoxFit.cover,
