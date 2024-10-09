@@ -1,26 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/presentation/screens/counter/counter_functions_screen.dart';
-import 'package:flutter_application_1/presentation/screens/counter/counter_screen.dart';
+import 'package:toktik/config/theme/app_theme.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorSchemeSeed: Colors.blue,
-        useMaterial3: true,
+      title: 'Tok Tik',
+      theme: AppTheme().getTheme(),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Tok Tik'),
+        ),
+        body: const Center(
+          child: Text('Hello World'),
+        ),
       ),
-      // home: const CounterScreen(),
-      home: const CounterFunctionsScreen(),
     );
   }
 }
