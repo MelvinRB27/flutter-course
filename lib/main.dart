@@ -1,34 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:toktik/config/theme/app_theme.dart';
-import 'package:toktik/infrastructure/datasources/local_video_datasources_impl.dart';
-import 'package:toktik/infrastructure/repositories/video_posts_repository_impl.dart';
-import 'package:toktik/presentation/providers/discover_provider.dart';
-import 'package:toktik/presentation/screens/discover/discover_screen.dart';
-import 'package:provider/provider.dart';
+import 'package:widgets_app/config/theme/app_theme.dart';
+import 'package:widgets_app/presentation/screen/home/home_screen.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  runApp(const MainApp());
+}
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final videoPostRepository = VideoPostsRepositoryImpl(
-        videoPostsDatasource: LocalVideoDatasourcesImpl());
-
-    return MultiProvider(
-        providers: [
-          ChangeNotifierProvider(
-              lazy: false,
-              create: (_) =>
-                  DiscoverProvider(videoPostsRepository: videoPostRepository)
-                    ..loadNextPage())
-        ],
-        child: MaterialApp(
-          title: 'Tok Tik',
-          debugShowCheckedModeBanner: false,
-          theme: AppTheme().getTheme(),
-          home: const DiscoverScreen(),
-        ));
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: AppTheme(selectedColor: 0).getTheme(),
+      home: const HomeScreen(),
+    );
   }
 }

@@ -1,8 +1,28 @@
 import 'package:flutter/material.dart';
 
+const colorList = [
+  Colors.blue,
+  Colors.green,
+  Colors.red,
+  Colors.yellow,
+  Colors.cyan
+];
+
 class AppTheme {
-  ThemeData getTheme () => ThemeData(
-    useMaterial3: true,
-    brightness: Brightness.dark
-  );
+  final int selectedColor;
+
+  AppTheme({required this.selectedColor})
+      : assert(
+          selectedColor >= 0 && selectedColor < colorList.length,
+        );
+
+  ThemeData getTheme() => ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: colorList[selectedColor],
+        ),
+        appBarTheme: const AppBarTheme(
+          centerTitle: false,
+        ),
+      );
 }
