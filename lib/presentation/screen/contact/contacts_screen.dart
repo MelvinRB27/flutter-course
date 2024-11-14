@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ContactsScreen extends StatelessWidget {
+  static const String name = "Contacts_Screen";
   const ContactsScreen({super.key});
 
   @override
