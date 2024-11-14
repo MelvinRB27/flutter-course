@@ -1,4 +1,4 @@
-import 'package:toktik/domain/datasource/video_posts_datasource.dart';
+import 'package:toktik/domain/datasources/video_posts_datasource.dart';
 import 'package:toktik/domain/entities/video_post.dart';
 import 'package:toktik/domain/repositories/video_posts_repository.dart';
 
