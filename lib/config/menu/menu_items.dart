@@ -23,13 +23,13 @@ var appMenuItems = <MenuItem>[
   const MenuItem(
     title: 'Tarjetas',
     subTitle: 'Un contendor reutilizable',
-    link: '/card',
+    link: '/cards',
     icon: Icons.credit_card,
   ),
   const MenuItem(
     title: 'Contact',
     subTitle: 'Contact',
-    link: 'https://www.google.com',
+    link: '/contacts',
     icon: Icons.contact_support,
   )
 ];
