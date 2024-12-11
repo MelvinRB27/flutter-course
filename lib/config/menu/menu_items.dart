@@ -15,6 +15,12 @@ class MenuItem {
 
 var appMenuItems = <MenuItem>[
   const MenuItem(
+    title: 'Counter',
+    subTitle: 'Un contador de valor',
+    link: '/counter',
+    icon: Icons.numbers,
+  ),
+  const MenuItem(
     title: 'Botones',
     subTitle: 'Varios Botones',
     link: '/buttons',
@@ -61,5 +67,11 @@ var appMenuItems = <MenuItem>[
     subTitle: 'Lista infinita y pull to refresh',
     link: '/infinite_scroll',
     icon: Icons.settings_input_component_sharp,
+  ),
+  const MenuItem(
+    title: 'Cambiar tema',
+    subTitle: 'Cambiar tema de la aplicación',
+    link: '/theme-changer',
+    icon: Icons.color_lens_outlined,
   ),
 ];
