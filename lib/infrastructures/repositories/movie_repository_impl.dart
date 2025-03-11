@@ -7,7 +7,7 @@ class MovieRepositoryImpl extends MoviesRepository {
   MovieRepositoryImpl(this.moviesDatasource);
 
   @override
-  Future<List<Movie>> getNowPlaying() async {
-    return await moviesDatasource.getNowPlaying();
+  Future<List<Movie>> getNowPlaying({int page = 1}) async {
+  return await moviesDatasource.getNowPlaying(page: page);
   }
 }
