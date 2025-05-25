@@ -10,4 +10,17 @@ class MovieRepositoryImpl extends MoviesRepository {
   Future<List<Movie>> getNowPlaying({int page = 1}) async {
   return await moviesDatasource.getNowPlaying(page: page);
   }
+
+  Future<List<Movie>> upComing({int page = 1}) async {
+    return await moviesDatasource.upComing(page: page);
+  }
+
+  Future<List<Movie>> getPopular({int page = 1}) async {
+    return await moviesDatasource.getPopular(page: page);
+  }
+  
+  Future<List<Movie>> getTopRated({int page = 1}) async {
+    return await moviesDatasource.getTopRated(page: page);
+  }
+
 }

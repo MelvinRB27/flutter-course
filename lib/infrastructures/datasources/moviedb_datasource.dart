@@ -16,7 +16,9 @@ class MovieDBDataSource extends MoviesDataSource {
 
   @override
   Future<List<Movie>> getNowPlaying({int page = 1}) async {
-    final response = await dio.get('/movie/now_playing');
+    final response = await dio.get('/movie/now_playing', queryParameters: {
+      "page": page,
+    });
 
     final movieResponse = MovieDbResponse.fromJson(response.data);
 
@@ -27,4 +29,54 @@ class MovieDBDataSource extends MoviesDataSource {
 
     return movies;
   }
+
+  @override
+  Future<List<Movie>> upComing({int page = 1}) async {
+    final response = await dio.get('/movie/upcoming', queryParameters: {
+      "page": page,
+    });
+
+    final movieResponse = MovieDbResponse.fromJson(response.data);
+
+    List<Movie> movies = movieResponse.results
+        .where((moviedb) => moviedb.posterPath != 'no-poster')
+        .map((moviedb) => MovieMapper.movieDBToEntity(moviedb))
+        .toList();
+
+    return movies;
+  }
+
+  @override
+  Future<List<Movie>> getPopular({int page = 1}) async {
+    final response = await dio.get('/movie/popular', queryParameters: {
+      "page": page,
+    });
+
+    final movieResponse = MovieDbResponse.fromJson(response.data);
+
+    List<Movie> movies = movieResponse.results
+        .where((moviedb) => moviedb.posterPath != 'no-poster')
+        .map((moviedb) => MovieMapper.movieDBToEntity(moviedb))
+        .toList();
+
+    return movies;
+  }
+  
+  @override
+  Future<List<Movie>> getTopRated({int page = 1}) async {
+    final response = await dio.get('/movie/top_rated', queryParameters: {
+      "page": page,
+    });
+
+    final movieResponse = MovieDbResponse.fromJson(response.data);
+
+    List<Movie> movies = movieResponse.results
+        .where((moviedb) => moviedb.posterPath != 'no-poster')
+        .map((moviedb) => MovieMapper.movieDBToEntity(moviedb))
+        .toList();
+
+    return movies;
+  }
+  
+  
 }

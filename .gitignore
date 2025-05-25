@@ -18,9 +18,7 @@ migrate_working_dir/
 *.iws
 .idea/
 
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
+# VSCode (si no quieres subir tus configs de VSCode, descomenta)
 #.vscode/
 
 # Flutter/Dart/Pub related
@@ -39,7 +37,42 @@ app.*.symbols
 # Obfuscation related
 app.*.map.json
 
-# Android Studio will place build artifacts here
+# Android Studio build artifacts
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Archivos generados por CMake/Ninja/NDK/etc
+**/CMakeCache.txt
+**/CMakeFiles/
+**/Makefile
+**/cmake_install.cmake
+**/build.ninja
+**/compile_commands.json
+**/configure_fingerprint.bin
+**/*.bin
+**/*.json
+**/*.txt
+**/*.cpp
+**/*.h
+**/*.o
+**/*.so
+**/*.a
+**/*.dex
+**/*.map
+
+# Archivos temporales/cache de código nativo
+**/metadata_generation_command.txt
+**/additional_project_files.txt
+**/symbol_folder_index.txt
+**/prefab_config.json
+**/TargetDirectories.txt
+**/hash_key.txt
+
+# Archivos temporales nativos generados (CMake, NDK)
+android/app/.cxx/
+**/configure_fingerprint.bin
+**/cache-v2
+**/codemodel-v2
+**/cmakeFiles-v1
+**/configure_fingerprint.bin
